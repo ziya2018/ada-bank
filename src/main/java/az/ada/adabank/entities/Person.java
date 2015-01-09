@@ -1,3 +1,5 @@
+package az.ada.adabank.entities;
+
 public class Person extends Customer {
 
   public String name;

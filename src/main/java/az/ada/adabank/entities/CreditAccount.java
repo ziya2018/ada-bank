@@ -1,3 +1,5 @@
+package az.ada.adabank.entities;
+
 public class CreditAccount extends Account {
 
   public Integer newAttr;
