@@ -1,13 +1,77 @@
 package az.ada.adabank.entities;
 
+/**
+ *
+ * @author Emil Aghjayev
+ */
 public class Organization extends Customer {
 
-  public String name;
+    private String name;
+    private String vatNumber;
+    private String address;
+    private String phoneNumber;
 
-  public String vatNumber;
+    /**
+     *
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public String address;
+    /**
+     *
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
 
-  public String phoneNumber;
+    /**
+     *
+     * @param vatNumber
+     */
+    public void setVatNumber(String vatNumber) {
+        this.vatNumber = vatNumber;
+    }
 
+    /**
+     *
+     * @return vatNumber
+     */
+    public String getVatNumber() {
+        return vatNumber;
+    }
+
+    /**
+     *
+     * @param address
+     */
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    /**
+     *
+     * @return address
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     *
+     * @param phoneNumber
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     *
+     * @return phoneNumber
+     */
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 }
