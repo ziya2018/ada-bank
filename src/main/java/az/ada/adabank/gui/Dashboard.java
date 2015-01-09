@@ -1,5 +1,6 @@
 package az.ada.adabank.gui;
 
+import java.awt.event.ActionEvent;
 import javax.swing.AbstractListModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.GroupLayout;
@@ -20,9 +21,9 @@ import javax.swing.WindowConstants;
 public class Dashboard extends JFrame {
 
     private JButton personButton;
-    private JButton jButton2;
-    private JButton jButton3;
-    private JButton jButton4;
+    private JButton organizationButton;
+    private JButton accountButton;
+    private JButton transactionButton;
     private JComboBox jComboBox1;
     private JList jList1;
     private JPanel jPanel1;
@@ -47,11 +48,11 @@ public class Dashboard extends JFrame {
         jList1 = new JList();
         jComboBox1 = new JComboBox();
         personButton = new JButton();
-        jButton2 = new JButton();
+        organizationButton = new JButton();
         jScrollPane3 = new JScrollPane();
         jTextArea2 = new JTextArea();
-        jButton3 = new JButton();
-        jButton4 = new JButton();
+        accountButton = new JButton();
+        transactionButton = new JButton();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,11 +73,11 @@ public class Dashboard extends JFrame {
 
         personButton.setText("New Person");
 
-        jButton2.setText("New Organization");
+        organizationButton.setText("New Organization");
 
-        jButton3.setText("New Account");
+        accountButton.setText("New Account");
 
-        jButton4.setText("New Transaction");
+        transactionButton.setText("New Transaction");
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -85,6 +86,24 @@ public class Dashboard extends JFrame {
         personButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personButtonActionPerformed(evt);
+            }
+        });
+
+        organizationButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                organizationButtonActionPerformed(evt);
+            }
+        });
+
+        accountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                accountButtonActionPerformed(evt);
+            }
+        });
+
+        transactionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                transactionButtonActionPerformed(evt);
             }
         });
 
@@ -125,11 +144,11 @@ public class Dashboard extends JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                         .addComponent(personButton)
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton2)
+                                        .addComponent(organizationButton)
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton3)
+                                        .addComponent(accountButton)
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton4)
+                                        .addComponent(transactionButton)
                                         .addGap(0, 32, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                         .addComponent(jScrollPane3)
@@ -141,9 +160,9 @@ public class Dashboard extends JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(personButton)
-                                .addComponent(jButton2)
-                                .addComponent(jButton3)
-                                .addComponent(jButton4)
+                                .addComponent(organizationButton)
+                                .addComponent(accountButton)
+                                .addComponent(transactionButton)
                         )
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3)
@@ -160,4 +179,28 @@ public class Dashboard extends JFrame {
 
     }
 
+    private void organizationButtonActionPerformed(java.awt.event.ActionEvent evt) {
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Organization().setVisible(true);
+            }
+        });
+    }
+
+    private void accountButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Account().setVisible(true);
+            }
+        });
+    }
+
+    private void transactionButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Transaction().setVisible(true);
+            }
+        });
+    }
 }

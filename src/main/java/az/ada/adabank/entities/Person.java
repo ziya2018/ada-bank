@@ -1,6 +1,7 @@
 package az.ada.adabank.entities;
+
 /**
- * 
+ *
  * @author Ali Mustafali
  */
 public class Person extends Customer {
@@ -18,103 +19,115 @@ public class Person extends Customer {
     private String address;
 
     private String phoneNumber;
-     
+
     /**
-     * 
-     * @param name 
+     *
+     * @param name
      */
     public void setName(String name) {
         this.name = name;
     }
+
     /**
-     * 
-     * @param surname 
+     *
+     * @param surname
      */
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
     /**
-     * 
-     * @param patronymic 
+     *
+     * @param patronymic
      */
     public void setPatronymic(String patronymic) {
         this.patronymic = patronymic;
     }
+
     /**
-     * 
-     * @param birthDate 
+     *
+     * @param birthDate
      */
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+
     /**
-     * 
-     * @param idCardNumber 
+     *
+     * @param idCardNumber
      */
     public void setIdCardNumber(String idCardNumber) {
         this.idCardNumber = idCardNumber;
     }
+
     /**
-     * 
-     * @param address 
+     *
+     * @param address
      */
     public void setAddress(String address) {
         this.address = address;
     }
+
     /**
-     * 
-     * @param phoneNumber 
+     *
+     * @param phoneNumber
      */
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    
+
     /**
-     * 
-     * @return name 
+     *
+     * @return name
      */
     public String setName() {
         return name;
     }
+
     /**
-     * 
-     * @return surname 
+     *
+     * @return surname
      */
     public String setSurname() {
         return surname;
     }
+
     /**
-     * 
-     * @return patronymic 
+     *
+     * @return patronymic
      */
     public String setPatronymic() {
         return patronymic;
     }
+
     /**
-     * 
+     *
      * @return birthDate
      */
     public String setBirthDate() {
         return birthDate;
     }
+
     /**
-     * 
-     * @return idCardNumber 
+     *
+     * @return idCardNumber
      */
     public String setIdCardNumber() {
         return idCardNumber;
     }
+
     /**
-     * 
-     * @return address 
+     *
+     * @return address
      */
     public String setAddress() {
         return address;
     }
+
     /**
-     * 
-     * @return phoneNumber 
+     *
+     * @return phoneNumber
      */
     public String setPhoneNumber() {
         return phoneNumber;
