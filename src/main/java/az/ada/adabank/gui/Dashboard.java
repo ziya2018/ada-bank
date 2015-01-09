@@ -18,17 +18,18 @@ import javax.swing.WindowConstants;
  * @author Adil Aliyev
  */
 public class Dashboard extends JFrame {
-
+    
     private JButton jButton1;
     private JButton jButton2;
     private JButton jButton3;
+    private JButton jButton4;
     private JComboBox jComboBox1;
     private JList jList1;
     private JPanel jPanel1;
     private JScrollPane jScrollPane1;
     private JScrollPane jScrollPane3;
     private JTextArea jTextArea2;
-
+    
     private GroupLayout layout;
     private GroupLayout jPanel1Layout;
 
@@ -38,9 +39,9 @@ public class Dashboard extends JFrame {
     public Dashboard() {
         initComponents();
     }
-
+    
     private void initComponents() {
-
+        
         jPanel1 = new JPanel();
         jScrollPane1 = new JScrollPane();
         jList1 = new JList();
@@ -50,41 +51,44 @@ public class Dashboard extends JFrame {
         jScrollPane3 = new JScrollPane();
         jTextArea2 = new JTextArea();
         jButton3 = new JButton();
-
+        jButton4 = new JButton();
+        
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
+        
         jList1.setModel(new AbstractListModel() {
             String[] strings = {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5"};
-
+            
             public int getSize() {
                 return strings.length;
             }
-
+            
             public Object getElementAt(int i) {
                 return strings[i];
             }
         });
         jScrollPane1.setViewportView(jList1);
-
+        
         jComboBox1.setModel(new DefaultComboBoxModel(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"}));
-
+        
         jButton1.setText("New Customer");
-
+        
         jButton2.setText("New Organization");
-
+        
+        jButton3.setText("New Account");
+        
+        jButton4.setText("New Transaction");
+        
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane3.setViewportView(jTextArea2);
-
-        jButton3.setText("New Account");
-
+        
         setUpLayout();
-
+        
         pack();
     }
-
+    
     private void setUpLayout() {
-
+        
         jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -104,7 +108,7 @@ public class Dashboard extends JFrame {
                         .addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                         .addContainerGap())
         );
-
+        
         layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,6 +123,8 @@ public class Dashboard extends JFrame {
                                         .addComponent(jButton2)
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jButton3)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton4)
                                         .addGap(0, 32, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                         .addComponent(jScrollPane3)
@@ -132,11 +138,13 @@ public class Dashboard extends JFrame {
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(jButton1)
                                 .addComponent(jButton2)
-                                .addComponent(jButton3))
+                                .addComponent(jButton3)
+                                .addComponent(jButton4)
+                        )
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3)
                         .addContainerGap())
         );
     }
-
+    
 }
