@@ -2,7 +2,7 @@ package az.ada.adabank.gui;
 import javax.swing.*;
 /**
  *
- * @author adil, ali, elnara
+ * @author Ali, Elnara
  */
 public class Organization extends JFrame {
 
@@ -29,7 +29,8 @@ public class Organization extends JFrame {
         jTextField3 = new JTextField();
         jTextField4 = new JTextField();
         jButton1 = new JButton();
-
+        
+        setResizable(false);
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
 
         jLabel1.setText("Name");
@@ -40,13 +41,13 @@ public class Organization extends JFrame {
 
         jLabel4.setText("Phone number");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText(" ");
 
-        jTextField2.setText("jTextField2");
+        jTextField2.setText(" ");
 
-        jTextField3.setText("jTextField3");
+        jTextField3.setText(" ");
 
-        jTextField4.setText("jTextField4");
+        jTextField4.setText(" ");
 
         jButton1.setText("Ok");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
