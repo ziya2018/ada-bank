@@ -5,6 +5,7 @@
  */
 package az.ada.adabank.gui;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -51,17 +52,19 @@ public class Account extends javax.swing.JFrame {
         jTextField2 = new JTextField();
         jButton1 = new JButton();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        setMaximumSize(new Dimension(305, 136));
+        setMinimumSize(new Dimension(305, 136));
+        setResizable(false);
         jLabel1.setText("Account number");
 
         jLabel2.setText("Customer");
 
         jLabel3.setText("Balance");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("");
 
-        jComboBox1.setModel(new DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new DefaultComboBoxModel(new String[] {}));
 
         jCheckBox1.setText("Credit");
         jCheckBox1.addActionListener(new ActionListener() {
@@ -72,7 +75,7 @@ public class Account extends javax.swing.JFrame {
 
         jLabel4.setText("Credit limit");
 
-        jTextField2.setText("jTextField2");
+        jTextField2.setText("");
 
         jButton1.setText("Ok");
 
