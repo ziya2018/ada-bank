@@ -5,14 +5,15 @@ package az.ada.adabank.entities;
  */
 public class Customer {
 
+
   private String id;
     
     
-    public void setId (String id )
+    public void setId(String id)
     {
         this.id=id;
     }
-
+  
     public String getId ()
     {
         return id;
