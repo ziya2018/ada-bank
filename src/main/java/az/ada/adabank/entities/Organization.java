@@ -74,4 +74,8 @@ public class Organization extends Customer {
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
+    public String toString() {
+        return this.getId() + "::" + this.getName();
+    }
 }

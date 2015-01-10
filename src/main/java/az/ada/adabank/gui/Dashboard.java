@@ -1,8 +1,15 @@
 package az.ada.adabank.gui;
 
+import az.ada.adabank.Main;
+import az.ada.adabank.entities.Account;
+import az.ada.adabank.entities.Customer;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.AbstractListModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -24,13 +31,13 @@ public class Dashboard extends JFrame {
     private JButton organizationButton;
     private JButton accountButton;
     private JButton transactionButton;
-    private JComboBox jComboBox1;
-    private JList jList1;
+    public static JComboBox customersComboBox;
+    private JList accountsList;
     private JPanel jPanel1;
     private JScrollPane jScrollPane1;
     private JScrollPane jScrollPane3;
     private JTextArea jTextArea2;
-
+    DefaultListModel model;
     private GroupLayout layout;
     private GroupLayout jPanel1Layout;
 
@@ -42,11 +49,11 @@ public class Dashboard extends JFrame {
     }
 
     private void initComponents() {
-
+        model = new DefaultListModel();
         jPanel1 = new JPanel();
         jScrollPane1 = new JScrollPane();
-        jList1 = new JList();
-        jComboBox1 = new JComboBox();
+        accountsList = new JList(model);
+        customersComboBox = new JComboBox();
         personButton = new JButton();
         organizationButton = new JButton();
         jScrollPane3 = new JScrollPane();
@@ -54,22 +61,11 @@ public class Dashboard extends JFrame {
         accountButton = new JButton();
         transactionButton = new JButton();
 
-        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        jList1.setModel(new AbstractListModel() {
-            String[] strings = {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5"};
+        jScrollPane1.setViewportView(accountsList);
 
-            public int getSize() {
-                return strings.length;
-            }
-
-            public Object getElementAt(int i) {
-                return strings[i];
-            }
-        });
-        jScrollPane1.setViewportView(jList1);
-
-        jComboBox1.setModel(new DefaultComboBoxModel(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"}));
+        customersComboBox.setModel(new DefaultComboBoxModel(new String[]{}));
 
         personButton.setText("New Person");
 
@@ -107,6 +103,14 @@ public class Dashboard extends JFrame {
             }
         });
 
+        customersComboBox.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadAccounts(e);
+            }
+        });
+
         setUpLayout();
 
         pack();
@@ -116,19 +120,17 @@ public class Dashboard extends JFrame {
 
         jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jScrollPane1)
-                                .addComponent(jComboBox1, 0, 181, Short.MAX_VALUE)))
+                                .addComponent(customersComboBox, 0, 181, Short.MAX_VALUE)))
         );
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                 .addGroup(GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(customersComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                         .addContainerGap())
@@ -183,7 +185,7 @@ public class Dashboard extends JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Organization().setVisible(true);
+                new OrganizationWindow().setVisible(true);
             }
         });
     }
@@ -191,7 +193,7 @@ public class Dashboard extends JFrame {
     private void accountButtonActionPerformed(java.awt.event.ActionEvent evt) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Account().setVisible(true);
+                new AccountWindow().setVisible(true);
             }
         });
     }
@@ -203,4 +205,20 @@ public class Dashboard extends JFrame {
             }
         });
     }
+
+    private void loadAccounts(java.awt.event.ActionEvent evt) {
+
+        model.clear();
+        if (customersComboBox.getItemCount() > 0) {
+            Customer currentCustomer = Main.customers.get(customersComboBox.getSelectedIndex());
+
+            for (Account account : Main.accounts.values()) {
+                if (account.getCustomer().equals(currentCustomer)) {
+                    model.addElement(account);
+                }
+            }
+        }
+
+    }
+
 }

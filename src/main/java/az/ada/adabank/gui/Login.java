@@ -129,7 +129,7 @@ public class Login extends JFrame {
 
     private void loginButtonActionPerformed(ActionEvent evt) {
 
-        if (loginTextBox.getText().equals("enabiyeva2018") && passwordTextBox.getText().equals("12345")) {
+        if (loginTextBox.getText().equals("1") && passwordTextBox.getText().equals("1")) {
 
             this.setVisible(false);
             EventQueue.invokeLater(new Runnable() {

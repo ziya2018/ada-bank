@@ -16,7 +16,7 @@ public class Account {
     /**
      * person who takes limited credit from bank
      */
-    private String customer;
+    private Customer customer;
     /**
      * balance of costumer
      */
@@ -45,7 +45,7 @@ public class Account {
      *
      * @return
      */
-    public String getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 
@@ -54,7 +54,7 @@ public class Account {
      *
      * @param customer
      */
-    public void setCustomer(String customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
@@ -74,6 +74,10 @@ public class Account {
      */
     public void setBalance(Integer balance) {
         this.balance = balance;
+    }
+
+    public String toString() {
+        return getNumber();
     }
 
 }
