@@ -1,15 +1,21 @@
 package az.ada.adabank.entities;
-
+/**
+ * 
+ * @author Mr Jahar
+ */
 public class Customer {
 
-    private String id;
+
+  private String id;
+    
+    
     public void setId(String id)
     {
         this.id=id;
     }
-    public String getId()
+  
+    public String getId ()
     {
         return id;
     }
-
 }
