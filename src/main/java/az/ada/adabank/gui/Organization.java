@@ -1,4 +1,5 @@
 package az.ada.adabank.gui;
+import java.awt.event.WindowEvent;
 import javax.swing.*;
 /**
  *
@@ -12,6 +13,19 @@ public class Organization extends JFrame {
     public Organization() {
         initComponents();
     }
+    
+    public static boolean isNumeric(String str)  
+{  
+  try  
+  {  
+    double d = Double.parseDouble(str);  
+  }  
+  catch(NumberFormatException nfe)  
+  {  
+    return false;  
+  }  
+  return true;  
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,8 +120,13 @@ public class Organization extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (!isNumeric(jTextField3.getText()) || isNumeric(jTextField4.getText()))
+            JOptionPane.showMessageDialog(null, "Use correct symbols!");
+       
+        //else we are planning to save the organization data and then exit
+        this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

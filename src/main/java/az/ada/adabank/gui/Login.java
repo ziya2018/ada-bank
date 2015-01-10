@@ -122,7 +122,7 @@ public class Login extends JFrame {
         pack();
     }
 
-    private void exitButtonActionPerformed(ActionEvent evt) {
+    private void th(ActionEvent evt) {
 
         this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
     }
