@@ -51,6 +51,7 @@ public class Account extends javax.swing.JFrame {
         jLabel4 = new JLabel();
         jTextField2 = new JTextField();
         jButton1 = new JButton();
+        
 
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         setMaximumSize(new Dimension(305, 136));

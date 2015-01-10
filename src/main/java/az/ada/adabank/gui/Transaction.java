@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package az.ada.adabank.gui;
+
+import java.awt.EventQueue;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -12,7 +14,9 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.GroupLayout;
+import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle;
+
 /**
  *
  * @author adil
@@ -65,6 +69,12 @@ public class Transaction extends JFrame {
         jComboBox3.setModel(new DefaultComboBoxModel(new String[]{"", "", "", ""}));
 
         jButton1.setText("Ok");
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,5 +140,27 @@ public class Transaction extends JFrame {
     private JLabel jLabel3;
     private JLabel jLabel4;
     private JTextField jTextField1;
+
     // End of variables declaration//GEN-END:variables
+    public static boolean isNumeric(String str) {
+        try {
+            double d = Double.parseDouble(str);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (isNumeric(jTextField1.getText())) {
+            // OK
+        } else {
+            JOptionPane.showMessageDialog(null, "Amount is invalid");
+        }
+
+    }
+
+    
+  
+    
 }
