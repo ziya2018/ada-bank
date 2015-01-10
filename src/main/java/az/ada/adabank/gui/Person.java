@@ -56,6 +56,7 @@ public class Person extends javax.swing.JFrame {
         jTextField6 = new JTextField();
         jTextField7 = new JTextField();
         jButton1 = new JButton();
+        setResizable(false);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 
@@ -73,21 +74,21 @@ public class Person extends javax.swing.JFrame {
 
         jLabel7.setText("Phone number");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("");
 
-        jTextField2.setText("jTextField2");
+        jTextField2.setText("");
 
-        jTextField3.setText("jTextField3");
+        jTextField3.setText("");
 
-        jTextField4.setText("jTextField4");
+        jTextField4.setText("");
 
-        jTextField5.setText("jTextField5");
+        jTextField5.setText("");
 
-        jTextField6.setText("jTextField6");
+        jTextField6.setText("");
 
-        jTextField7.setText("jTextField7");
+        jTextField7.setText("");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
