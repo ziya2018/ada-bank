@@ -9,6 +9,7 @@ import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
@@ -127,12 +128,19 @@ public class Login extends JFrame {
     }
 
     private void loginButtonActionPerformed(ActionEvent evt) {
-        this.setVisible(false);
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dashboard().setVisible(true);
-            }
-        });
+
+        if (loginTextBox.getText().equals("enabiyeva2018") && passwordTextBox.getText().equals("12345")) {
+
+            this.setVisible(false);
+            EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new Dashboard().setVisible(true);
+                }
+            });
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Login or password is invalid.");
+        }
 
     }
 
