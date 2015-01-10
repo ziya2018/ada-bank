@@ -57,7 +57,7 @@ public class Person extends javax.swing.JFrame {
         jTextField7 = new JTextField();
         jButton1 = new JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 
         jLabel1.setText("Name");
 

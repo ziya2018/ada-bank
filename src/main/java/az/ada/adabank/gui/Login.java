@@ -43,7 +43,7 @@ public class Login extends JFrame {
         loginButton = new JButton();
         exitButton = new JButton();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         setTitle("ADABank Login");
         setMaximumSize(new Dimension(305, 136));
         setMinimumSize(new Dimension(305, 136));
