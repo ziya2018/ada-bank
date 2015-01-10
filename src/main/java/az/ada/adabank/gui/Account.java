@@ -51,7 +51,7 @@ public class Account extends javax.swing.JFrame {
         jTextField2 = new JTextField();
         jButton1 = new JButton();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
 
         jLabel1.setText("Account number");
 
