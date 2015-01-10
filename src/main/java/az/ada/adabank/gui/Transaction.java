@@ -44,6 +44,7 @@ public class Transaction extends JFrame {
         jTextField1 = new JTextField();
         jComboBox3 = new JComboBox();
         jButton1 = new JButton();
+        setResizable(false);
 
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
 
@@ -55,13 +56,13 @@ public class Transaction extends JFrame {
 
         jLabel4.setText("Currency");
 
-        jComboBox1.setModel(new DefaultComboBoxModel(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"}));
+        jComboBox1.setModel(new DefaultComboBoxModel(new String[]{"", "", "", ""}));
 
-        jComboBox2.setModel(new DefaultComboBoxModel(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"}));
+        jComboBox2.setModel(new DefaultComboBoxModel(new String[]{"", "", "", ""}));
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("");
 
-        jComboBox3.setModel(new DefaultComboBoxModel(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"}));
+        jComboBox3.setModel(new DefaultComboBoxModel(new String[]{"", "", "", ""}));
 
         jButton1.setText("Ok");
 
