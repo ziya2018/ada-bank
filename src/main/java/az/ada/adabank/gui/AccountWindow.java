@@ -22,6 +22,7 @@ import javax.swing.WindowConstants;
  *
  * @author Emil Aghjayev
  * @author Seymur Ayvazov
+ * 
  */
 public class AccountWindow extends javax.swing.JFrame {
 
