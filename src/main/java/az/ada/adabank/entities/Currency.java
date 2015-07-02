@@ -4,6 +4,7 @@ package az.ada.adabank.entities;
  * This class shows how the currency is changed.
  *
  * @author Tural
+ * @author Kamran
  *
  */
 public class Currency {
