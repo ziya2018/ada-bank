@@ -60,8 +60,11 @@ public class Transaction {
      *
      * @return account
      */
+    
     public String getAccount() {
+        
         return account;
+        
     }
 
     /**
@@ -69,7 +72,8 @@ public class Transaction {
      *
      * @param account
      */
-    public void setAccount(String account) {
+    private String manat;
+    public void setAccount(String manat) {
         this.account = account;
     }
 
