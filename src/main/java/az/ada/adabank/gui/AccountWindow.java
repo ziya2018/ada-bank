@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
 
+
 /**
  *
  * @author Emil Aghjayev
@@ -35,7 +36,7 @@ public class AccountWindow extends javax.swing.JFrame {
 
     private void initComponents() {
 
-        jLabel1 = new JLabel();
+        accountLabel = new JLabel();
         jLabel2 = new JLabel();
         jLabel3 = new JLabel();
         accountNumberTextField = new JTextField();
@@ -50,7 +51,7 @@ public class AccountWindow extends javax.swing.JFrame {
         setMaximumSize(new Dimension(305, 136));
         setMinimumSize(new Dimension(305, 136));
         setResizable(false);
-        jLabel1.setText("Account number");
+        accountLabel.setText("Account number");
 
         jLabel2.setText("Customer");
 
@@ -93,7 +94,7 @@ public class AccountWindow extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel1)
+                                                .addComponent(accountLabel)
                                                 .addComponent(jLabel2)
                                                 .addComponent(jLabel3)
                                                 .addComponent(jLabel4))
@@ -119,7 +120,7 @@ public class AccountWindow extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel1)
+                                .addComponent(accountLabel)
                                 .addComponent(accountNumberTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -174,7 +175,7 @@ public class AccountWindow extends javax.swing.JFrame {
     private JButton jButton1;
     private JCheckBox jCheckBox1;
     private JComboBox customersComboBox;
-    private JLabel jLabel1;
+    private JLabel accountLabel;
     private JLabel jLabel2;
     private JLabel jLabel3;
     private JLabel jLabel4;
